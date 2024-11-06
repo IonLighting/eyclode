@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bubbles Around World Map</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="map-container">
+      <img src="worldmap.png" alt="World Map" class="world-map">
+      <div class="bubble active" id="bubble1" onclick="setActiveBubble(1)">Query Management</div>
+      <div class="bubble" id="bubble2" onclick="setActiveBubble(2)">EY Certification</div>
+      <div class="bubble" id="bubble3" onclick="setActiveBubble(3)">Knowledge Testing</div>
+      <div class="bubble" id="bubble4" onclick="setActiveBubble(4)">Hands-on Experience</div>
+      <div class="bubble" id="bubble5" onclick="setActiveBubble(5)">Well-Structured Agenda</div>
+      <div class="bubble" id="bubble6" onclick="setActiveBubble(6)">Comprehensive Coverage</div>
+    </div>
+    <div class="text-container">
+        <!-- headin -->
+      <h2 id="activeText">Hand-picked Topics</h2>      
+      <p id="description">Select a bubble to see details.</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

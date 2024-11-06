@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .map-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+  }
+  
+  .world-map {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+  }
+  
+  .bubble {
+    position: absolute;
+    width: 120px;  /* Increase size here */
+    height: 120px; /* Increase size here */
+    background-color: #444;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+  
+  .bubble.active {
+    background-color: #ff0;
+    color: #000;
+    transform: scale(1.1);
+  }
+  
+  #bubble1 { top: -12%; left: 35%; }   
+  #bubble2 { top: 10%; left: -5%; }     
+  #bubble3 { top: 62%; left: -6%; }    
+  #bubble4 { top: 85%; left: 35%; }    
+  #bubble5 { top: 62%; left: 78%; }    
+  #bubble6 { top: 8%; left: 76%; }
+  
+  
+  .text-container {
+    margin-left: 74px;
+    max-width: 300px;
+  }
+  
+  #activeText {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  #description {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Add a media query for screens smaller than 900px */
+@media (max-width: 900px) {
+    .container {
+        display: none; /* Hide the container on small screens */
+    }
+}
