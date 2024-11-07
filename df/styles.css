@@ -1,84 +1,131 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  
-  .map-container {
-    position: relative;
-    width: 400px;
-    height: 400px;
-  }
-  
-  .world-map {
-    width: 100%;
-    height: auto;
-    border-radius: 50%;
-  }
-  
-  .bubble {
-    position: absolute;
-    width: 120px;  /* Increase size here */
-    height: 120px; /* Increase size here */
-    background-color: #444;
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-  
-  .bubble.active {
-    background-color: #ff0;
-    color: #000;
-    transform: scale(1.1);
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.map-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.world-map {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.bubble {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #444;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.bubble.active {
+  background-color: #ff0;
+  color: #000;
+  transform: scale(1.1);
+}
+/* Position bubbles in a circular pattern */
+#bubble1 { top: -10%; left: 38%; }
+#bubble2 { top: 12%; left: -1%; }
+#bubble3 { top: 64%; left: -4%; }
+#bubble4 { top: 86%; left: 37%; }
+#bubble5 { top: 64%; left: 81%; }
+#bubble6 { top: 10%; left: 79%; }
+
+.text-container {
+  margin-left: 20px;
+  max-width: 300px;
+}
+
+#activeText {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#description {
+  font-size: 16px;
+  color: #333;
+}
+
+
+/* Responsive adjustments for screens smaller than 900px */
+@media (max-width: 900px) {
+  /* Stack the content vertically */
+  .container {
+      flex-direction: column;
+      align-items: center;
   }
   
-  #bubble1 { top: -12%; left: 35%; }   
-  #bubble2 { top: 10%; left: -5%; }     
-  #bubble3 { top: 62%; left: -6%; }    
-  #bubble4 { top: 85%; left: 35%; }    
-  #bubble5 { top: 62%; left: 78%; }    
-  #bubble6 { top: 8%; left: 76%; }
+  /* Hide the map image on smaller screens */
+  .world-map {
+      display: none;
+  }
   
+  /* Align bubbles in a row at the top with space between */
+  .map-container {
+      width: auto;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      gap: 15px; /* Add space between bubbles */
+      margin-bottom: 20px;
+      position: static; /* Remove absolute positioning for bubbles */
+  }
+
+  #bubble1, #bubble2, #bubble3, #bubble4, #bubble5, #bubble6 {
+    position: relative;
+    top: auto;
+    left: auto;
+}
+
+  /* Reposition each bubble in a row */
+  .bubble {
+      position: relative;
+      width: 95px; /* Smaller bubble size for small screens */
+      height: 95px;
+      font-size: small;
+  }
   
   .text-container {
-    margin-left: 74px;
-    max-width: 300px;
+      text-align: center;
+      margin: 0;
+      padding: 0 20px;
+      max-width: 100%;
   }
   
+  
   #activeText {
-    font-size: 24px;
-    margin-bottom: 10px;
+      font-size: 20px;
   }
   
   #description {
-    font-size: 16px;
-    color: #333;
+      font-size: 14px;
   }
-  
-  /* Add a media query for screens smaller than 900px */
-@media (max-width: 900px) {
-    .container {
-        display: none; /* Hide the container on small screens */
-    }
 }
